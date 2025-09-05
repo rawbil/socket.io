@@ -2,11 +2,14 @@ import express, { Application, NextFunction, Request, Response } from "express";
 import cors from "cors";
 import path, { dirname } from "path";
 import { fileURLToPath } from "url";
-require('dotenv').config()
+require("dotenv").config();
 export const app: Application = express();
 
 // parsers
 app.use(express.json());
+
+//static folder
+//app.use(express.static(path.join(__dirname, "./public/index.html")))
 
 //cors
 const corsOptions = {
@@ -18,8 +21,7 @@ app.use(cors(corsOptions));
 
 //test route
 app.get("/", (req: Request, res: Response, next: NextFunction) => {
-  //res.status(200).json({ success: true, message: "Server is OK" });
-  res.sendFile(path.join(__dirname, "index.html"));
+  res.status(200).json({ success: true, message: "Server is OK" });
 });
 
 //404 route

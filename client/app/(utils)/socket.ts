@@ -4,7 +4,7 @@ import { io } from "socket.io-client";
 const URL =
   process.env.NODE_ENV === "production"
     ? undefined
-    : process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+    : process.env.NEXT_PUBLIC_API_URL || "http://localhost:4000";
 
 export const socket = io(URL, {
   autoConnect: false, // call socket.connect() to connect

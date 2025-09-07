@@ -12,7 +12,7 @@ export default function Home() {
     const socket = io("http://localhost:4000");
 
     socket.on("connect", () => {
-      console.log("✅ Connected to server:", socket.id);
+      console.log("Connected to server:", socket.id);
     });
 
     // listen for chat messages
